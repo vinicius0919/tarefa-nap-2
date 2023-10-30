@@ -1,6 +1,5 @@
 #CLASSE PROPRIEDADE: DESENVILVIDA EM SALA DE AULA
 #UTILIZADA EM CONJUNTO COM AS CLASSES BOI E CRUD
-#ATUALMENTE NÃO UTILIZADA
 class Propriedade:
     def __init__(self, nome, endereco, cnpj):
         self._id = None
