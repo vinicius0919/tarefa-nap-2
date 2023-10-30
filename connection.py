@@ -12,7 +12,7 @@ def conectar():
     conexao = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='coloque sua senha aqui',
+        password='senhaforte',
         database='fazenda'
     )
     return conexao
@@ -45,14 +45,11 @@ def select_tabela(numero):
         cursor.execute("SELECT * FROM bois")
         resultados = cursor.fetchall()
         print("\nTabela Bois:")
-        for linha in resultados:
-            print(linha)
+        return(resultados)
     elif numero == 1:
         cursor.execute("SELECT * FROM propriedade")
         resultados = cursor.fetchall()
-        print("\nTabela Propriedade:")
-        for linha in resultados:
-            print(linha)
+        return (resultados)
 
     cursor.close()
     conexao.close()
@@ -64,13 +61,11 @@ def select_only(numero, id):
     if numero == 0:
         cursor.execute(f"SELECT * FROM bois where id= {id}")
         resultados = cursor.fetchall()
-        for linha in resultados:
-            return linha
+        return resultados[0]
     elif numero == 1:
         cursor.execute(f"SELECT * FROM propriedade where id= {id} ")
         resultados = cursor.fetchall()
-        for linha in resultados:
-            return linha
+        return resultados[0]
     cursor.close()
     conexao.close()
 
